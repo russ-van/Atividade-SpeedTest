@@ -4,12 +4,15 @@ function cadastrarPedido() {
     let total = parseFloat(document.querySelector("#total").value);
     let gorjeta = (total * 0.10);
     let totalGorjeta = total + gorjeta
+    let comanda = document.querySelector("#comanda").value;
+
 
     localStorage.setItem("nome", nome);
     localStorage.setItem("mesa", mesa);
     localStorage.setItem("total", (total).toFixed(2));
     localStorage.setItem("gorjeta", (gorjeta).toFixed(2));
     localStorage.setItem("totalGorjeta", (totalGorjeta).toFixed(2));
+    localStorage.setItem("comanda", comanda)
 
     document.querySelector("#ficha").innerHTML = `
     <ul>        <li>Garçom: ${localStorage.getItem("nome")}</li>
@@ -18,5 +21,7 @@ function cadastrarPedido() {
                 <li>Gorjeta (10%): R$ ${localStorage.getItem("gorjeta")}</li>
                 </ul>
                 <p style="font-size: 135%; margin-left: 3vh;">Fatura total: R$ ${localStorage.getItem("totalGorjeta")}</p>`
+
+    document.querySelector("#comandaTexto").innerHTML = `Comanda código ${localStorage.getItem("comanda")}:`
 
 }
