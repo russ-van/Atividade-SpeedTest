@@ -1,5 +1,6 @@
 function cadastrarPedido() {
- 
+    let nome = document.querySelector("#nome").value;
+    let mesa = parseInt(document.querySelector("#mesa").value);
     let total = parseFloat(document.querySelector("#total").value);
     let gorjeta = (total * 0.10);
     let totalGorjeta = total + gorjeta
